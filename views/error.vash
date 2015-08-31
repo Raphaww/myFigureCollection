@@ -1,0 +1,11 @@
+@html.extend('layout', function(model){
+
+    @html.block('content', function(model){
+            
+        <h1>Error</h2>
+
+        <div>@model.message</div>
+
+    })
+
+})

@@ -1,0 +1,81 @@
+@html.extend('layout', function(model){
+
+   @html.block('content', function(model){
+            
+   <div class="container" ng-app="figuresApp">
+      <!--<div class="row carousel-holder">
+         <div class="col-md-12">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+               </ol>
+               <div class="carousel-inner">
+                  <div class="item active">
+                     <img class="slide-image" src="http://placehold.it/1920x400" alt="">
+                  </div>
+               </div>
+               <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+               </a>
+               <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+               </a>
+               </div>
+         </div>
+      </div>-->
+      <div class="row">
+         @model.figures.forEach(function(figure){
+         <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+               <img src="@figure.imageUrl" alt="">
+               <div class="caption">
+                  <h4 class="pull-right">$24.99</h4>
+                  <h4><a href="/figures/@figure.uri">@figure.baseName</a>
+                  </h4>
+                  <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+               </div>
+               <div class="ratings">
+                  <p class="pull-right">15 reviews</p>
+                  <p>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                     <span class="glyphicon glyphicon-star"></span>
+                  </p>
+               </div>
+            </div>
+         </div>
+         })
+         <div class="col-sm-4 col-lg-4 col-md-4 container">
+            <div class="row thumbs__add">
+               <form ng-controller="FiguresController as figureCtrl" ng-submit="figureCtrl.addFigure(figure)">
+                  <div class="form-group">
+                     <label for="figure.baseName">Nombre</label>
+                     <input ng-model="figureCtrl.figure.baseName" type="text" class="form-control" placeholder="Nombre"/>
+                  </div>
+                  <div class="form-group">
+                     <label for="figure.imageUrl">Url imagen</label>
+                     <input ng-model="figureCtrl.figure.imageUrl" type="text" class="form-control" placeholder="Imagen" />
+                  </div>
+                  <div class="form-group">
+                     <label for="figure.brand">Fabricante</label>
+                     <select ng-model="figureCtrl.figure.brand" class="form-control">
+                        <option value="Kayodo">Kayodo</option>
+                        <option value="Figma">Figma</option>
+                        <option value="Nendoroid">Nendoroid</option>
+                     </select>
+                  </div>
+                  <button type="submit" class="btn btn-default">Agregar</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   })
+   @html.block('header', function(){
+      <script src="/javascripts/figures.js"></script>
+   })
+
+})
