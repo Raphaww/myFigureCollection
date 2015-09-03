@@ -19,9 +19,15 @@ router.post('/add', function(req, res, next) {
    });
 });
 
-router.get('/:name', function(req, res, next){
-   res.setHeader('Content-Type', 'application/json');
-   res.send(req.params.name);
+router.get('/:figureUri', function(req, res, next){
+   var figuresPromise = figure.getFigures(req, {uri: req.params.figureUri});
+   var model = {};
+   figuresPromise.then(function(figureList){
+      model.title = figureList[0].baseName;
+      model.figure = figureList[0];
+      model.figureBigUrl = model.figure.imageUrl.replace(/=w.*/gi, '=w1920');
+      res.render('figure', model);
+   });
 });
 
 

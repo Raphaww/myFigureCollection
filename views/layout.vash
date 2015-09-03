@@ -4,7 +4,7 @@
       <meta charset="utf-8">
       <title>@model.title</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="/stylesheets/base.css">
+      
       <script src="/javascripts/angular.js"></script>
       @html.block('header')
    </head>
@@ -19,13 +19,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">My Figure Collection</a>
+                <a class="navbar-brand" href="/">My Figure Collection</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="ap_navbar_collapse">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">Figures</a>
+                        <a href="/">Figures</a>
                     </li>
                     <li>
                         <a href="#">More</a>

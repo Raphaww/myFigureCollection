@@ -1,7 +1,8 @@
-exports.getFigures = function(req){
+exports.getFigures = function(req, queryRequest){
+   queryRequest = queryRequest || {};
    var db = req.db;
    var collection = db.get('figure');
-   return collection.find({},{},function(e,docs){
+   return collection.find(queryRequest,{},function(e,docs){
      return docs;
    });
 };

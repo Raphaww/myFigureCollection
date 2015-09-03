@@ -21,7 +21,7 @@ gulp.task('icons', function() { 
 
 
 gulp.task('css', function() { 
-	return sass(config.sassPath + '/base.scss',
+	return sass(config.sassPath + '/',
 		{
 			style:'compressed',
 			loadPath:['./resources/sass', config.bowerDir + '/bootstrap-sass-official/assets/stylesheets']

@@ -75,6 +75,7 @@
 
    })
    @html.block('header', function(){
+      <link rel="stylesheet" type="text/css" href="/stylesheets/base.css">
       <script src="/javascripts/figures.js"></script>
    })
 
