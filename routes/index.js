@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
    var figuresPromise = figure.getFigures(req);
    var model = {
-      title: 'MyFigureCollection'
+      title: 'My Figure Collection'
    };
    figuresPromise.then(function(figureList){
       model.figures = figureList;
