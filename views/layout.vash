@@ -4,8 +4,10 @@
       <meta charset="utf-8">
       <title>@model.title</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      
-      <script src="/javascripts/angular.min.js"></script>
+
+      <script src="/javascripts/react.js"></script>
+      <script src="/javascripts/react-dom.js"></script>
+
       @html.block('header')
    </head>
    <body>
@@ -37,7 +39,8 @@
       </nav>
       @html.block('content')
       <footer>
-         @html.block('footer')   
+         @html.block('footer')
       </footer>
+      @html.block('scripts')
    </body>
 </html>

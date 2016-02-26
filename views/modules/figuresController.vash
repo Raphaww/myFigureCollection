@@ -1,0 +1,20 @@
+<form ng-controller="FiguresController as figureCtrl" ng-submit="figureCtrl.addFigure(figure, file)">
+   <div class="form-group">
+      <label for="figure.baseName">Nombre</label>
+      <input ng-model="figureCtrl.figure.baseName" type="text" class="form-control" placeholder="Nombre"/>
+   </div>
+   <div class="form-group">
+      <label for="file">Imagen</label>
+      <div class="button" ngf-select ng-model="figureCtrl.file" name="file" ngf-pattern="'image/*"
+            accept="image/*" ngf-max-size="20MB" ngf-min-height="100">Select</div>
+   </div>
+   <div class="form-group">
+      <label for="figure.brand">Fabricante</label>
+      <select ng-model="figureCtrl.figure.brand" class="form-control">
+         <option value="Kayodo">Kayodo</option>
+         <option value="Figma">Figma</option>
+         <option value="Nendoroid">Nendoroid</option>
+      </select>
+   </div>
+   <button type="submit" class="btn btn-default">Agregar</button>
+</form>

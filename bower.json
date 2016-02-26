@@ -24,7 +24,8 @@
   ],
   "dependencies": {
     "bootstrap-sass-official": "~3.3.5",
-    "ng-file-upload": "~7.3.6"
+    "ng-file-upload": "~7.3.6",
+    "react": "~0.14.0"
   },
   "devDependencies": {
     "angular": "~1.4.4"
